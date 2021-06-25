@@ -1,0 +1,154 @@
+<style>
+    .root {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .subdiv {
+        width: 600px;
+
+    }
+</style>
+
+<html>
+<link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+<link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+<link rel="stylesheet" href="/assets/css/cs-skin-elastic.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
+<script src='/javascripts/project.js'></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+<form action="/supplier/addrecord" method="POST" enctype="multipart/form-data">
+    <div class="root">
+        <div class="subdiv">
+
+            <div class="root">
+                <div class="subdiv">
+                    <div class="card">
+                        <div class="card-header">Suppliers Registration</div>
+                        
+                        <div class="card-body card-block">
+                            <div>
+                                <b><a href="/supplier/displaysupplier">Show all Suppliers</a></b>
+
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                                    <input type="text" name="suppliername" placeholder="Supplier Name"
+                                        class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="radio" name="suppliergender" vale="Male" class="with-gap">
+                                <i class="fa fa-male" style="font-size: 20px; color:#003399"></i>
+
+                                <input type="radio" name="suppliergender" value="Female" class="with-gap"
+                                    style="margin-left:30px">
+                                <i class="fa fa-female" style="font-size: 20px; color:red"></i>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-globe"></i></div>
+                                    <input type="text" name="supplieraddress" placeholder="Address"
+                                        class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-addon"><i class="fa fa-globe"></i></div>
+                                            <select name="state" id="state" class="form-control">
+                                                <option>-State-</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-addon"><i class="fa fa-globe"></i></div>
+                                            <select name="city" id="city" class="form-control">
+                                                <option>-City-</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-mobile"></i></div>
+                                    <input type="text" name="mobileno" placeholder="Mobile Number" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-mobile"></i></div>
+                                    <input type="text" name="firmname" placeholder="Company Name" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-picture-o"></i></div>
+                                    <input type="file" name="firmlogo" placeholder="Company Logo" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon"><i class="fa fa-picture-o"></i></div>
+                                    <input type="file" name="picture" placeholder="Seller Image" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-actions form-group"><button type="submit"
+                                            class="btn btn-success btn-sm">Submit</button></div>
+
+                                </div>
+                                <div class="col">
+                                    <div class="form-actions form-group"><button type="reset"
+                                            class="btn btn-success btn-sm">Reset</button></div>
+                                </div>
+                            </div>
+                            <div>
+                                <%=msg%>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>

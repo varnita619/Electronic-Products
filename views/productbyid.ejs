@@ -1,0 +1,114 @@
+<style type='text/css'>
+    .root{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items:center;
+    
+    }
+    .subdiv{
+         width: 500px;
+         height: auto;
+         padding: 20px;
+         background:#bdc3c7;
+         margin-top: 30px;
+         }
+         .subdivpic{
+         width: 500px;
+         height: auto;
+         padding: 20px;
+         background:#bdc3c7;
+         margin-top: 5px;
+         }    
+    .ctrl{
+       padding:10px ;
+    
+    }
+    </style>    
+    
+    <html>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <div class='root'>
+      <form action="/product/editdeleterecord">
+    <div class="subdiv">
+      <a href='/product/displayall'>Show All Products</a> 
+     
+      <h4>Edit/Delete Products</h4>
+       <input type='hidden' value='<%=Data.productid %>' name='productid'>
+ 
+        <div class="row ctrl">
+          <input type='text' name="productname" value="<%=Data.productname %>" class='form-control' placeholder="Product Name">
+       </div>
+    
+    <div class="row ctrl">
+        <div class="col">
+        <input type='text' value="<%=Data.productrate %>" name="productrate" class='form-control' placeholder="Product Rate">
+        </div>
+        <div class="col">
+            <input type='text' value="<%=Data.productstock %>" name="productstock" class='form-control' placeholder="Product Stock">
+        </div>
+        
+    </div>
+    
+    <div class="row ctrl">
+        <div class="col">
+        <input type='text' value="<%=Data.offerprice %>" name="offerprice" class='form-control' placeholder="Offer Price">
+        </div>
+        <div class="col">
+            <select class="form-control" name="offertype">
+            <option><%=Data.offertype %></option>    
+            <option>Discounted</option> 
+            <option>Exchange Offer</option>           
+          </select>
+    
+        </div>
+        </div>
+    
+        <div class="row ctrl">
+            <textarea class='form-control' name="description"><%=Data.description%></textarea>
+         </div>
+    
+       <div class="row ctrl">
+         <select class='form-control' name="status">
+             <option><%=Data.status %></option>
+             <option>Discontinue</option>
+             <option>Coming Soon</option>
+         </select>
+    
+       </div>  
+           
+       <div class="row ctrl">
+        <div class="col">
+          <button type="submit" value='Edit' name="btn" class="btn btn-primary">Edit</button>
+        </div>
+        <div class="col">
+          <button type="submit"  value="Delete" name="btn" class="btn btn-primary">Delete</button>
+        </div>    
+       </div>          
+    </div>
+  </form>
+
+  <form action="/product/editpicture" enctype="multipart/form-data" method="POST">
+    <input type="hidden" value="<%=Data.productid %>" name="productid">
+  <div class="subdivpic">
+    <div class="row ctrl">
+      <div class="col">
+         <img src="/images/<%=Data.picture %>" width="80" height="80">
+      </div>
+        <div class="col">
+          <input type="file" name="picture" class="form-control">
+        </div>
+    </div>
+    <div class="row ctrl">
+      <button type="submit" class="btn btn-primary">Edit Picture</button>
+    </div>
+
+  </div>
+</form>
+
+    </div>      
+    </html>

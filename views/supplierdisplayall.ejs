@@ -1,0 +1,168 @@
+<style type='text/css'>
+  .root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .subdiv {
+    width: 2000px;
+  }
+
+</style>
+
+<html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Ela Admin - HTML5 Admin Template">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="apple-touch-icon" href="https://i.imgur.com/QRAUqs9.png">
+<link rel="shortcut icon" href="https://i.imgur.com/QRAUqs9.png">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/pixeden-stroke-7-icon@1.2.3/pe-icon-7-stroke/dist/pe-icon-7-stroke.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.0/css/flag-icon.min.css">
+<link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<div class="root">
+<div class="subdiv">
+  <a href="/supplier/supplierview">Add New Suppliers</a>
+<div class="content">
+  <div class="animated fadeIn">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card">
+          <div class="card-header">
+            <strong class="card-title">List of Suppliers</strong>
+          </div>
+          <div class="table-stats order-table ov-h">
+            <table class="table ">
+              <thead>
+                <tr>
+                  <th class="serial">S.No.</th>
+                  <th class="avatar">Supplier Image</th>
+                  <th>ID</th>
+                  <th>Name</th>
+                  <th>Gender</th>
+                  <th>Address</th>
+                  <th>State & City</th>
+                  <th>Mobile No.</th>
+                  <th>Firm Name</th>
+                  <th>Firm Logo</th>
+                  <th>Edit/Delete</th>
+                </tr>
+              </thead>
+    
+              <tbody>
+                <% Data.map(function(item,index){ %>
+                <tr>
+                  <td scope="row">
+                    <%=(index+1)%>
+                  </td>
+                    <td class="avatar">
+                        <div class="round-img">
+                          <a href="#"><img class="rounded-circle" src="/images/<%=item.picture%>" width="50" height="50" alt=""></a>
+                        </div>
+                    </td>
+                    <td> <%=item.supplierid%> </td>
+                    <td>  <span class="name"><%=item.suppliername%></span> </td>
+                    <td> <span class="product"><%=item.suppliergender%></span> </td>
+                    <td> <span class="product"><%=item.supplieraddress%></span> </td>
+                    <td> <span class="product"><%=item.statename%><br>
+                      <%=item.cityname%></span> </td>
+                    <td> <span class="count"><%=item.mobileno%></span> </td>
+                    <td> <span class="product"><%=item.firmname%></span> </td>
+                    <td><img src='/images/<%=item.firmlogo%>' width="40" height="40"></td>
+            <td><a href='/supplier/displaybyid?sid=<%=item.supplierid %>'>Edit/Delete</a></td>
+                </tr>
+                <%})%>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- <div class="root">
+  <div class="subdiv">
+    <a href="/supplier/supplierview">Add New Suppliers</a>
+    <h4>List of Suppliers</h4>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">S.No.</th>
+          <th scope="col">Supplier Id</th>
+          <th scope="col">Supplier Name</th>
+          <th scope="col">Supplier Gender</th>
+          <th scope="col">Supplier Address</th>
+          <th scope="col">State &<br>City</th>
+          <th scope="col">Mobile No.</th>
+          <th scope="col">Firm Name</th>
+          <th scope="col">Firm Logo</th>
+          <th scope="col">Picture</th>
+          <th scope="col">Edit/Delete</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% Data.map(function(item,index){ %>
+          <tr>
+            <th scope="row">
+              <%=(index+1)%>
+            </th>
+            <td>
+              <%=item.supplierid%>
+            </td>
+            <td>
+              <%=item.suppliername%>
+            </td>
+            <td>
+              <%=item.suppliergender%>
+            </td>
+            <td>
+              <%=item.supplieraddress%>
+            </td>
+            <td>
+              <%=item.statename%><br>
+                <%=item.cityname%>
+            </td>
+            <td>
+              <%=item.mobileno%>
+            </td>
+            <td>
+              <%=item.firmname%>
+            </td>
+            <td><img src='/images/<%=item.firmlogo%>' width="40" height="40"></td>
+            <td><img src='/images/<%=item.picture%>' width="40" height="40"></td>
+            <td><a href='/supplier/displaybyid?sid=<%=item.supplierid %>'>Edit/Delete</a></td>
+
+          </tr>
+
+          <%})%>
+      </tbody>
+    </table>
+  </div>
+</div> -->
+
+</html>

@@ -1,0 +1,66 @@
+<style type='text/css'>
+  .root{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+  
+  }
+  .subdiv{
+       width: 900px;
+       height: auto;
+       padding: 20px;
+       background:#bdc3c7;
+       margin-top: 30px;
+       }
+  
+  
+  </style>    
+  
+<html>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+ <div class="root">
+   
+   <div class='subdiv'>
+    <a href='/product/productview'>Add New Products</a> 
+    <h4>List of Products</h4>
+  <table class='table'>
+
+  <thead>
+  <tr>
+    <th scope='col'>Sn</th>
+    <th scope='col'>Product ID</th>
+    <th scope='col'>Product Name</th>
+    <th scope='col'>Rate/<br>Offer/Type</th>
+    <th scope='col'>Stock</th>
+    <th scope='col'>Description</th>
+    <th scope='col'>Status</th>
+    <th scope='col'>Picture</th>
+    <th scope='col'>Edit/Delete</th>
+  </tr>
+</thead>
+<tbody>
+ <% Data.map(function(item,index){ %>
+  
+  <tr>
+  <th scope='row'><%=(index+1) %></th>  
+  <td><%=item.productid %></td>
+  <td><%=item.productname %></td> 
+  <td><%=item.productrate %><br><%=item.offerprice %><br><%=item.offertype %></td>
+  <td><%=item.productstock %></td>
+  <td><%=item.description %></td>
+  <td><%=item.status %></td>
+  <td><img src='/images/<%=item.picture %>' width='40' height='40'></td>
+  <td><a href='/product/displaybyid?pid=<%=item.productid %>'>Edit/Delete</a></td>
+</tr>
+
+
+ <%}) %>    
+</tbody>
+</table>
+</div>
+</div>
+</html>
